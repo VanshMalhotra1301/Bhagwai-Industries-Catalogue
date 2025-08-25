@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Mobile Menu Toggle ---
+    // --- 1. Preloader Logic ---
+    // This section controls the motor animation splash screen.
+// --- 1. Preloader Logic ---
+// This section controls the motor animation splash screen.
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Wait for 2.5 seconds to showcase the animation before fading it out.
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 450); // 2500 milliseconds = 2.5 seconds
+    }
+
+    // --- 2. Mobile Menu Toggle ---
+    // This handles the opening and closing of the navigation menu on mobile devices.
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenuButton && mobileMenu) {
@@ -8,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
+        // This closes the mobile menu when a link is clicked.
         const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
         for (let link of mobileMenuLinks) {
             link.addEventListener('click', () => {
@@ -16,18 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Reveal on Scroll Animation ---
+    // --- 3. Reveal on Scroll Animation ---
+    // This uses the Intersection Observer API to animate elements as they scroll into view.
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optional: stop observing once it's visible
-                // revealObserver.unobserve(entry.target); 
             }
         });
     }, {
-        threshold: 0.1 // Trigger when 10% of the element is visible
+        threshold: 0.1 // Triggers when 10% of the element is visible.
     });
 
     revealElements.forEach(element => {
@@ -35,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- Animated Particle Background for Hero ---
+    // --- 4. Animated Particle Background for Hero ---
+    // This creates the live, moving particle effect in the main hero section.
     const canvas = document.getElementById('hero-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
