@@ -172,3 +172,282 @@ p {
     background-color: var(--color-background-card);
     border-top: 1px solid var(--color-border);
 }
+
+/* --- Preloader & Motor Animation --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-background-deep);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+/* --- Preloader & 3D Motor Animation --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Semi-transparent background creates the overlay "shadow" effect */
+    background-color: rgba(13, 17, 23, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Container to create the 3D perspective */
+.motor-container {
+    perspective: 1000px;
+}
+
+/* The main rotating assembly, angled for a 3D view */
+.motor-assembly {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(60deg) rotateZ(-45deg);
+    animation: slow-pan 10s linear infinite; /* Subtle pan for more dynamic feel */
+}
+
+/* The back casing of the motor */
+.motor-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, #555 0%, #222 100%);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.7), 0 5px 15px rgba(0,0,0,0.5);
+    transform: translateZ(-25px); /* Pushes the back away from the viewer */
+}
+
+/* The fan blades container, which spins */
+.motor-blades {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 10px;
+    left: 10px;
+    transform-style: preserve-3d;
+    animation: spin 0.25s linear infinite;
+    transform: translateZ(0px); /* Positioned in the middle */
+}
+
+.blade {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background: #ccc;
+    left: 30%;
+    top: 30%;
+    opacity: 0.8;
+    border-radius: 40% 10%;
+    transform-origin: 50% 100%; /* Pivots from the base */
+}
+
+.blade:nth-child(1) { transform: rotate(0deg) skewX(20deg); }
+.blade:nth-child(2) { transform: rotate(120deg) skewX(20deg); }
+.blade:nth-child(3) { transform: rotate(240deg) skewX(20deg); }
+
+/* The front grille for a realistic look */
+.motor-front-grille {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid #444;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    background: 
+        repeating-radial-gradient(circle, #333, #333 2px, transparent 2px, transparent 20px),
+        repeating-linear-gradient(45deg, #222, #222 1px, transparent 1px, transparent 10px);
+    transform: translateZ(25px); /* Pulls the grille towards the viewer */
+}
+
+/* Keyframes for the fast fan spinning */
+@keyframes spin {
+    from { transform: translateZ(0px) rotateZ(0deg); }
+    to { transform: translateZ(0px) rotateZ(360deg); }
+}
+
+/* Optional: Keyframes for a slow panning of the whole motor */
+@keyframes slow-pan {
+    from { transform: rotateX(60deg) rotateZ(-45deg); }
+    to { transform: rotateX(60deg) rotateZ(315deg); }
+}/* --- Premium Cosmic Ember Preloader & Motor Animation --- */
+
+/* The main preloader container, which acts as a full-screen overlay. */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Use the deep space background color from your theme */
+    background-color: var(--color-background-deep);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Smoother and slightly longer transition for a more elegant fade-out */
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Container to create the 3D perspective for the motor */
+.motor-container {
+    perspective: 1500px; /* Increased perspective for a more dramatic 3D effect */
+    /* Add a subtle glow that emanates from the motor */
+    filter: drop-shadow(0 0 35px var(--color-primary-accent-glow));
+}
+
+/* The main rotating assembly, angled for a dynamic 3D view */
+.motor-assembly {
+    width: 280px; /* Increased size for more presence */
+    height: 280px;
+    position: relative;
+    transform-style: preserve-3d;
+    /* A more complex and smoother animation for a cosmic drift */
+    animation: cosmic-drift 15s ease-in-out infinite;
+}
+
+/* The back casing of the motor */
+.motor-casing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Gradient using theme colors for a metallic, sci-fi look */
+    background: radial-gradient(circle, var(--color-background-card) 0%, var(--color-background-deep) 100%);
+    /* More detailed shadows for depth, using theme colors */
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    border: 2px solid var(--color-border);
+    transform: translateZ(-35px); /* Pushed further back */
+}
+
+/* NEW: Stator windings for added realism and detail */
+.stator-windings {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+    background: repeating-conic-gradient(var(--color-primary-accent) 0% 2%, var(--color-border) 2% 4%);
+    transform: translateZ(-15px);
+    filter: blur(1px); /* Softens the windings for realism */
+}
+
+
+/* The fan blades container, which spins rapidly */
+.motor-blades {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-d;
+    animation: spin 0.2s linear infinite; /* Faster spin for a powerful feel */
+}
+
+.blade {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    left: calc(50% - 40px);
+    top: calc(50% - 110px);
+    /* Gradient gives the blades a metallic, ember-like sheen */
+    background: linear-gradient(160deg, var(--color-primary-accent), #a15c07);
+    border-radius: 40px 10px;
+    transform-origin: 50% 110px; /* Pivots from the base */
+    box-shadow: 0 0 15px var(--color-primary-accent-glow);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+/* Switched to 5 blades for a more turbine-like appearance */
+.blade:nth-child(1) { transform: rotate(0deg) skewY(-15deg); }
+.blade:nth-child(2) { transform: rotate(72deg) skewY(-15deg); }
+.blade:nth-child(3) { transform: rotate(144deg) skewY(-15deg); }
+.blade:nth-child(4) { transform: rotate(216deg) skewY(-15deg); }
+.blade:nth-child(5) { transform: rotate(288deg) skewY(-15deg); }
+
+/* NEW: A central glowing hub for the motor's core */
+.motor-hub {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-primary-accent) 20%, #d48a0a);
+    transform: translateZ(5px);
+    /* Pulsing glow animation for a "live" feel */
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* The front grille for a finished, realistic look */
+.motor-front-grille {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid var(--color-border);
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.7), 0 0 20px var(--color-primary-accent-glow);
+    /* Grille pattern using theme colors */
+    background:
+        repeating-radial-gradient(circle, var(--color-text-secondary), var(--color-text-secondary) 1px, transparent 2px, transparent 20px);
+    transform: translateZ(35px); /* Pulled further forward */
+}
+
+/* --- Keyframe Animations --- */
+
+/* Keyframes for the rapid fan spin */
+@keyframes spin {
+    from { transform: rotateZ(0deg); }
+    to { transform: rotateZ(360deg); }
+}
+
+/* NEW: Keyframes for a slow, complex "drifting" motion in 3D space */
+@keyframes cosmic-drift {
+    0% { transform: rotateX(60deg) rotateY(-15deg) rotateZ(0deg); }
+    50% { transform: rotateX(50deg) rotateY(15deg) rotateZ(180deg); }
+    100% { transform: rotateX(60deg) rotateY(-15deg) rotateZ(360deg); }
+}
+
+/* NEW: Keyframes for the pulsing central hub glow */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 15px 5px var(--color-primary-accent-glow);
+        transform: translateZ(5px) scale(1);
+    }
+    50% {
+        box-shadow: 0 0 30px 10px var(--color-primary-accent-glow);
+        transform: translateZ(5px) scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 15px 5px var(--color-primary-accent-glow);
+        transform: translateZ(5px) scale(1);
+    }
+}
