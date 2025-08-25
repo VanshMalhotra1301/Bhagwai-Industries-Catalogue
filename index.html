@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhagwati Industries | Cooler Motor Manufacturing</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to External CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-white">
+                    Bhagwati <span class="text-amber-500">Industries</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-amber-500">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-amber-500">About Us</a>
+                    <a href="#products" class="nav-link text-gray-300 hover:text-amber-500">Products</a>
+                    <a href="#quality" class="nav-link text-gray-300 hover:text-amber-500">Quality</a>
+                    <a href="#contact" class="bg-amber-500 text-gray-900 font-semibold px-5 py-2 rounded-md hover:bg-amber-600 transition-colors duration-300">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#home" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Home</a>
+                <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">About Us</a>
+                <a href="#products" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Products</a>
+                <a href="#quality" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800 rounded">Quality</a>
+                <a href="#contact" class="block mt-2 py-2 px-4 text-sm text-center bg-amber-500 text-gray-900 font-semibold rounded-md hover:bg-amber-600 transition-colors duration-300">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
+            <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+            <img src="https://placehold.co/1920x1080/2d3748/1a202c?text=Cooler+Motors" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/2d3748/1a202c?text=Image+Not+Found';"
+                 alt="Cooler Motors Background" 
+                 class="absolute inset-0 w-full h-full object-cover">
+            <div class="relative z-20 container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Engineering Excellence in <span class="text-amber-500">Every Rotation</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Specializing in high-performance, durable cooler motors for residential and commercial use.
+                </p>
+                <a href="#products" class="bg-amber-500 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-amber-600 transition-all duration-300 transform hover:scale-105">
+                    Explore Our Motors
+                </a>
+            </div>
+        </section>
+
+        <!-- Product Categories Section -->
+        <section id="products" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Our Cooler Motors</h2>
+                    <p class="text-gray-400 mt-2">A wide range of motors for every cooling application.</p>
+                    <div class="w-24 h-1 bg-amber-500 mx-auto mt-4 rounded"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Category Card 1 -->
+                    <div class="category-card bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://placehold.co/600x400/334155/f8fafc?text=Exhaust+Fan+Motors" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/f8fafc?text=Image';"
+                             alt="Exhaust Fan Motors" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">Exhaust Fan Motors</h3>
+                            <p class="text-gray-400 mt-2 text-sm">Powerful and silent motors designed for optimal air circulation.</p>
+                        </div>
+                    </div>
+                    <!-- Category Card 2 -->
+                    <div class="category-card bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://placehold.co/600x400/334155/f8fafc?text=High-Speed+Motors" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/f8fafc?text=Image';"
+                             alt="High-Speed Cooler Motors" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">High-Speed Cooler Motors</h3>
+                            <p class="text-gray-400 mt-2 text-sm">Engineered for maximum airflow and cooling efficiency.</p>
+                        </div>
+                    </div>
+                    <!-- Category Card 3 -->
+                    <div class="category-card bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://placehold.co/600x400/334155/f8fafc?text=Cooler+Kit+Motors" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/f8fafc?text=Image';"
+                             alt="Cooler Kit Motors" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">Cooler Kit Motors</h3>
+                            <p class="text-gray-400 mt-2 text-sm">Complete motor kits for easy assembly and reliable performance.</p>
+                        </div>
+                    </div>
+                    <!-- Category Card 4 -->
+                    <div class="category-card bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://placehold.co/600x400/334155/f8fafc?text=Submersible+Pump+Motors" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/f8fafc?text=Image';"
+                             alt="Submersible Pump Motors" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white">Submersible Pump Motors</h3>
+                            <p class="text-gray-400 mt-2 text-sm">Water-resistant and durable motors for submersible cooler pumps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/800x600/1f2937/4b5563?text=Motor+Manufacturing" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/800x600/1f2937/4b5563?text=Image';"
+                             alt="Bhagwati Industries Facility" class="rounded-lg shadow-2xl">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About Bhagwati Industries</h2>
+                        <div class="w-24 h-1 bg-amber-500 mb-6 rounded"></div>
+                        <p class="text-gray-300 mb-4">
+                            For over two decades, Bhagwati Industries has been a leading manufacturer of high-quality cooler motors. We are dedicated to innovation and precision engineering, producing reliable and efficient motors that our clients can depend on.
+                        </p>
+                        <p class="text-gray-300">
+                            Our commitment to state-of-the-art technology and a skilled workforce allows us to meet the most demanding specifications and deliver excellence on time, every time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality / Why Choose Us Section -->
+        <section id="quality" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Our Commitment to Excellence</h2>
+                    <p class="text-gray-400 mt-2">Why partners trust Bhagwati Industries.</p>
+                    <div class="w-24 h-1 bg-amber-500 mx-auto mt-4 rounded"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <!-- Feature 1 -->
+                    <div class="bg-gray-900 p-8 rounded-lg">
+                        <div class="flex items-center justify-center h-16 w-16 bg-amber-500/10 text-amber-500 rounded-full mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Uncompromising Quality</h3>
+                        <p class="text-gray-400">Each motor undergoes rigorous testing for performance, efficiency, and longevity.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-gray-900 p-8 rounded-lg">
+                        <div class="flex items-center justify-center h-16 w-16 bg-amber-500/10 text-amber-500 rounded-full mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">On-Time Delivery</h3>
+                        <p class="text-gray-400">Our efficient production line ensures your orders are delivered on schedule.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-gray-900 p-8 rounded-lg">
+                        <div class="flex items-center justify-center h-16 w-16 bg-amber-500/10 text-amber-500 rounded-full mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Customer Focused</h3>
+                        <p class="text-gray-400">We provide tailored motor solutions and dedicated support for all our clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-400 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold text-white mb-4">
+                        Bhagwati <span class="text-amber-500">Industries</span>
+                    </h3>
+                    <p class="max-w-md">Your trusted partner in cooler motor manufacturing, delivering powerful and efficient solutions.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#about" class="hover:text-amber-500 transition-colors">About Us</a></li>
+                        <li class="mb-2"><a href="#products" class="hover:text-amber-500 transition-colors">Products</a></li>
+                        <li class="mb-2"><a href="#quality" class="hover:text-amber-500 transition-colors">Quality Assurance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contact Us</h4>
+                    <p class="mb-2">123 Industrial Area, Noida, UP, India</p>
+                    <p class="mb-2">Email: info@bhagwatiindustries.com</p>
+                    <p>Phone: +91 12345 67890</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 border-t border-gray-800 pt-6 text-center text-sm">
+                <p>&copy; 2024 Bhagwati Industries. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
