@@ -1,36 +1,174 @@
-/* Custom styles for smooth transitions and font */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* --- Cosmic Ember Theme Variables --- */
+:root {
+    --color-background-deep: #0D1117; /* Deep space black */
+    --color-background-card: #161B22; /* Lighter charcoal for cards */
+    --color-border: #30363D;
+    --color-primary-accent: #f59e0b;  /* Ember orange */
+    --color-primary-accent-glow: rgba(245, 158, 11, 0.3);
+    --color-text-primary: #E6EDF3;   /* Soft white */
+    --color-text-secondary: #8B949E; /* Muted gray */
+    --font-family-base: 'Inter', sans-serif;
+}
+
+/* --- Base & Reset Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #111827; /* bg-gray-900 */
-    color: #F9FAFB; /* text-gray-100 */
+    font-family: var(--font-family-base);
+    background-color: var(--color-background-deep);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
 }
 
-.nav-link {
-    position: relative;
-    transition: color 0.3s ease;
+/* --- Animation Classes (for JS Intersection Observer) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.nav-link::after {
-    content: '';
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 0 10px var(--color-primary-accent-glow);
+}
+
+p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background-color: rgba(13, 17, 23, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.3s ease;
+}
+
+/* --- Hero Section --- */
+#hero-canvas {
     position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 50%;
-    background-color: #F59E0B; /* amber-500 */
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav-link:hover::after {
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    z-index: 5;
 }
 
-.category-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-content {
+    position: relative;
+    z-index: 10;
 }
 
-.category-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.2), 0 4px 6px -2px rgba(245, 158, 11, 0.1);
+.hero-title-gradient {
+    background: linear-gradient(45deg, var(--color-text-primary), var(--color-primary-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-button {
+    background-color: var(--color-primary-accent);
+    color: var(--color-background-deep);
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px var(--color-primary-accent-glow);
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--color-primary-accent);
+    border-color: var(--color-primary-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+}
+
+/* --- Section Styling --- */
+.section-title-underline {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary-accent), transparent);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+/* --- Product Cards --- */
+.product-card {
+    background-color: var(--color-background-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) perspective(1000px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 25px var(--color-primary-accent-glow);
+}
+
+.product-card img {
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Quality/Features Section --- */
+.feature-card {
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.feature-icon-wrapper {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--color-primary-accent);
+    box-shadow: 0 0 15px var(--color-primary-accent-glow);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--color-primary-accent-glow);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-background-card);
+    border-top: 1px solid var(--color-border);
 }
